@@ -10,6 +10,10 @@ const user_schema = mongoose.Schema({
         trim: true,
         unique: 1
     },
+    password: {
+        type: String,
+        maxlength: 50
+    },
     lastname: {
         type: String,
         maxlength: 50
