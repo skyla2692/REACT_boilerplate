@@ -17,7 +17,7 @@ const user_schema = mongoose.Schema({
     },
     password: {
         type: String,
-        maxlength: 50,
+        maxlength: 80,
         required: true
     },
     lastname: {
@@ -79,7 +79,7 @@ user_schema.methods.generateToken = function (cb) {
 
     user.token = token
     user.save(function (err, user) {
-        if (err) return cb(err)
+        if (err) return cb(err);
         cb(null, user)
     })
 }
