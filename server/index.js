@@ -6,12 +6,15 @@ const config = require('./config/key');
 const { auth } = require('./middleware/auth');
 const { User } = require("./models/User");
 
+
 //application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //application/json 
 app.use(bodyParser.json());
 app.use(cookieParser());
+
 
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI, {
@@ -22,7 +25,9 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => res.send('Hello World!~~ '))
 
+
 app.get('/api/hello', (req, res) => res.send('Hello World!~~ '))
+
 
 app.post('/api/users/register', (req, res) => {
 
@@ -37,6 +42,7 @@ app.post('/api/users/register', (req, res) => {
     })
   })
 })
+
 
 app.post('/api/users/login', (req, res) => {
 
